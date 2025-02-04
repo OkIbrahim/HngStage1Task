@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: turquoise;
+}
+
+.container {
+    text-align: center;
+    background: wheat;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    color: fuchsia;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.color-box {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border: 2px solid #000;
+    transition: background-color 0.5s;
+}
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.color-option {
+    width: 80px;
+    height: 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.new-game {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.new-game:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .color-option {
+        width: 60px;
+        height: 60px;
+    }
+
+    .color-box {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.status {
+    margin-top: 20px;
+}
+
+.correct {
+    color: green;
+    animation: correctAnimation 1s ease-in-out;
+}
+
+@keyframes correctAnimation {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.wrong {
+    color: red;
+    animation: wrongAnimation 1s ease-in-out;
+}
+
+@keyframes wrongAnimation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.warning {
+    color: orange;
+    animation: warningAnimation 1s ease-in-out;
+}
+
+@keyframes warningAnimation {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
